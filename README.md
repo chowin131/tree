@@ -6,7 +6,7 @@
   <img src="assets/demo.gif" alt="demo" width="432">
 </p>
 
-## 실행
+## Getting Started
 
 ```bash
 pip install pillow numpy imageio-ffmpeg
@@ -23,7 +23,7 @@ python christmas_tree.py --save tree.gif    # gif로 저장
 | `--scale X` | 출력 배율 | 미리보기 `0.6`, 저장 `1.0` |
 | `--workers N` | 렌더 프로세스 수 | 코어 수 − 1 |
 
-## 원리
+## How it works
 
 - **잎** — 원뿔 표면 근처에 점 3,000개를 흩뿌리고 각 점에 `# @ % & * o x W M v ^` 같은 문자를 하나씩 배정
 - **회전** — 매 프레임 `φ + rot`로 3D 좌표를 계산하고, z(깊이) 순으로 정렬해 뒤에서 앞으로 그림 (painter's algorithm). 앞쪽일수록 밝고 크게
@@ -32,7 +32,7 @@ python christmas_tree.py --save tree.gif    # gif로 저장
 - **병렬 렌더** — 각 프레임은 시간 `t`만의 함수라 서로 독립. 여러 프로세스가 앞 프레임을 미리 그려두고 메인은 순서대로 30fps로 표시만 함
 - **연출** — 잎이 위에서부터 자라남 → 별 → 전구 → 갈런드 → 선물 상자 → `MERRY CHRISTMAS` 타이핑
 
-## 커스터마이즈
+## Customization
 
 `christmas_tree.py` 상단 상수만 바꾸면 됨.
 
